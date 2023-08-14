@@ -68,7 +68,7 @@ jobs:
           REGISTRY: ghcr.io
           IMAGE_NAME: ${{ github.repository }}
           ECR_REPOSITORY: ${{ github.repository }}
-          IMAGE_TAG: ${{ env.IMAGE_TAG }}
+          IMAGE_TAG: ${{ env.image_tag }}
         run: |
           echo REGISTRY: $REGISTRY
           echo ECR_REPOSITORY: $ECR_REPOSITORY
