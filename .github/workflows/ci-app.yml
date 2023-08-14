@@ -62,13 +62,13 @@ jobs:
         run: |
           echo "IMAGE_TAG=`echo ${BRANCH_TAG}-${SHORT_SHA}`" >> $GITHUB_ENV
 
-      - name: Build and tag image
+      - name: build and tag image
         id: build_image
         env:
           REGISTRY: ghcr.io
           IMAGE_NAME: ${{ github.repository }}
           ECR_REPOSITORY: ${{ github.repository }}
-          IMAGE_TAG: ${{ env.image_tag }}
+          IMAGE_TAG: ${{ env.IMAGE_TAG }}
         run: |
           echo REGISTRY: $REGISTRY
           echo ECR_REPOSITORY: $ECR_REPOSITORY
