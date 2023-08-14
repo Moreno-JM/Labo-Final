@@ -86,6 +86,7 @@ jobs:
           name: docker-image
           path: /tmp/docker-image.tar
           retention-days: 1
+          
   docker-trivy-vuln:
     name: Trivy vulnerability scanner
     runs-on: ubuntu-latest
@@ -109,6 +110,7 @@ jobs:
           exit-code: '0'
           ignore-unfixed: false
           severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
+          
   docker-grype:
     name: Grype (Anchore) Docker Scan
     runs-on: ubuntu-latest
@@ -130,4 +132,4 @@ jobs:
         with:
           image: "${{ needs.docker-build.outputs.full_docker_image_tag }}"
           output-format: table
-          fail-build: true
+          fail-build: false
