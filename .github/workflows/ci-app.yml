@@ -43,7 +43,7 @@ jobs:
           fail-build: false
           output-format: table
   docker-build:
-    name: Build Docker image
+    name: build docker image
     outputs:
       full_docker_image_tag: ${{ steps.build_image.outputs.full_docker_image_tag }}
       image_tag: ${{ steps.build_image.outputs.image_tag }}
